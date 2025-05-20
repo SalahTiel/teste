@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <title>Formulário</title>
+</head>
+<body>
+
+  <div class="progress-bar">
+    <div class="progress" id="progress"></div>
+  </div>
+
+
+  <form id="multiStepForm" action="https://formsubmit.co/salatielmf49@gmail.com" method="POST" enctype="multipart/form-data">
+  
+    <input type="hidden" name="_next" value="https://salahtiel.github.io/forms/sucesso">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="Novo envio do formulário!">
+    <input type="hidden" name="_template" value="box">
+
+    <div class="step-bar">
+      <div class="step active">
+        <p>1</p>
+        <p>Seus dados</p>
+      </div>
+
+      <div class="step">
+        <p>2</p>
+        <p>Endereço</p>
+      </div>
+
+      <div class="step">
+        <p>3</p>
+        <p>Documentação</p>
+      </div>
+
+      <div class="step">
+        <p>4</p>
+        <p>Sobre você</p>
+      </div>
+    </div>
+
+    <!-- Passo 1 -->
+    <div class="form-step active">
+      <div class="fields">
+        <div class="cpf-div">
+          <label for="nome">Seu Nome*</label>
+          <input id="nomeField" type="text" name="Nome" data-required="true">
+
+          <label for="">Indique aqui o seu GC*</label>
+          <input type="text" name="GC" data-required="true">
+
+          <div class="flex">
+            <div class="flexChieldLarge">
+              <label for="">CPF*</label>
+              <input id="cpfField" maxlength="14" type="text" name="CPF" data-required="true">
+            </div>
+
+            <div class="flexChieldLarge">
+              <label for="">RG*</label>
+              <input id="rgField" maxlength="14" type="text" name="RG" data-required="true">
+            </div>
+          </div>
+
+          <label for="">Data de Nascimento*</label>
+          <input type="date" name="Data de Nascimento" data-required="true">
+
+          <div class="flex">
+            <div class="flexChieldLarge">
+              <label for="">Telefone</label>
+              <input id="telField" name="Telefone" type="tel" maxlength="14">
+            </div>
+
+            <div class="flexChieldLarge">
+              <label  for="">Celular*</label>
+              <input  id="celField" type="tel" name="Celular" data-required="true" maxlength="15">
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="cnpj-div">
+          <label for="">CNPJ*</label>
+          <input id="cnpjField" maxlength="18" type="text" name="CNPJ" data-required="true">
+
+          <label for="">Razão Social*</label>
+          <input id="Razao-SocialField" type="text" name="Razao Social" data-required="true">
+
+          <label for="email">E-mail*</label>
+          <input type="email" name="Email" data-required="true">
+
+          <label for="">Porte da Empresa*</label>
+          <select name="Porte da Empresa" id="" data-required="true">
+            <option value="SEM ENQUADRAMENTO" selected>SEM ENQUADRAMENTO</option>
+            <option value="MEI - MICROEMPREENDEDOR INDIVIDUAL">MEI - MICROEMPREENDEDOR INDIVIDUAL</option>
+            <option value="ME - MICROEMPRESA">ME - MICROEMPRESA</option>
+            <option value="EPP - EMPRESA DE PEQUENO PORTE">EPP - EMPRESA DE PEQUENO PORTE</option>
+            <option value="EMPRESA DE MÉDIO PORTE">EMPRESA DE MÉDIO PORTE</option>
+            <option value="GRANDE EMPRESA">GRANDE EMPRESA</option>
+            <option value="EIRELI<">EIRELI</option>
+          </select>
+        </div>
+      </div>
+      
+
+      <div class="button-group">
+        <p class="legend">*Obrigatório</p>
+        <div class="buttons">
+          <button class="left" type="button" disabled><</button>
+          <button type="button" onclick="nextStep()">
+            <p>Próxima etapa</p>
+            <img src="assets/Right Arrow.svg" alt="">
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+     <!-- Passo 2 -->
+     <div class="form-step">
+      <div class="fields">
+        <div class="first-div">
+          <label for="">CEP*</label>
+          <input type="text" name="CEP" id="cepField" maxlength="9" data-required="true">
+
+          <label for="">Logradouro*</label>
+          <input type="text" id="rua" name="Rua" data-required="true">
+
+          <div class="flex">
+            <div class="flexChieldMedium">
+              <label for="">Bairro*</label>
+              <input type="" id="bairro" name="Bairro" data-required="true">
+            </div>
+
+            <div class="flexChieldMedium">
+              <label for="">Número*</label>
+              <input type="number" name="Número" data-required="true">
+            </div>
+          </div>
+
+          <label for="">Complemento</label>
+          <input type="text" name="Complemento">
+        </div>
+
+        <div class="second-div">
+          <label for="">Estado*</label>
+          <input type="text" id="estado" name="UF" data-required="true">
+
+          <label for="">Cidade*</label>
+          <input type="text" id="cidade" name="Cidade" data-required="true"">
+        </div>
+      </div>
+      
+      <div class="button-group">
+        <p class="legend">*Obrigatório</p>
+        <div class="buttons">
+          <button class="left" type="button" onclick="prevStep()">
+            <img src="assets/Right Arrow-1.svg" alt="">
+            <p>Voltar</p>
+          </button>
+          <button type="button" onclick="nextStep()">
+            <p>Próxima etapa</p>
+            <img src="assets/Right Arrow.svg" alt="">
+          </button>
+        </div>
+      </div>
+            
+    </div>
+
+    <!-- Passo 3 -->
+    <div class="form-step">
+      <p class="description">Anexe seus documentos com nitidez e de uma forma que seja legível, para que possamos dar continuidade ao seu processo de cadastro.</p>
+
+      <div class="fields">
+      <div class="first-div">
+
+        <label for="">Foto da Fachada*</label>
+        <p class="legend">Fotografe a fachada do seu estabelecimento em um ângulo que seja possível visualizar de forma nítida o nome e logo. Lembre-se de obter a distância, o enquadramento e a luminosidade necessários para fazer uma boa fotografia.</p>
+        <div class="upload-field">
+          <label for="fileUpload1" class="file-label">
+            <span class="file-icon"><img src="assets/Google Docs.svg" alt=""></span>
+            <span class="file-placeholder" id="fileName1">Selecione um documento...</span>
+          </label>
+          <input onchange="handleSelectedFile(1, 'add')" type="file" id="fileUpload1" name="Fotografia da Fachada" data-required="true">
+          <button onclick="handleSelectedFile(1, 'delete')" type="button" class="delete-btn" id="deleteFile1" title="Remover arquivo"><img src="assets/Trash.svg" alt=""></button>
+        </div>
+
+        <label for="">Documento de identificação</label>
+        <p class="legend">Anexe um documento de identidade com foto, original e atualizado. Podendo ser o RG ou a Carteira Nacional de Habilitação.</p>
+        <div class="upload-field">
+          <label for="fileUpload2" class="file-label">
+            <span class="file-icon"><img src="assets/Google Docs.svg" alt=""></span>
+            <span class="file-placeholder" id="fileName2">Selecione um documento...</span>
+          </label>
+          <input onchange="handleSelectedFile(2, 'add')" type="file" id="fileUpload2" name="Documento de Identificação" data-required="true">
+          <button onclick="handleSelectedFile(2, 'delete')" type="button" class="delete-btn" id="deleteFile2" title="Remover arquivo"><img src="assets/Trash.svg" alt=""></button>
+        </div>
+
+      </div>
+
+      <div class="second-div">
+        
+        <label for="">Comprovante de Endereço*</label>
+        <div class="upload-field">
+          <label for="fileUpload3" class="file-label">
+            <span class="file-icon"><img src="assets/Google Docs.svg" alt=""></span>
+            <span class="file-placeholder" id="fileName3">Selecione um documento...</span>
+          </label>
+          <input onchange="handleSelectedFile(3, 'add')" type="file" id="fileUpload3" name="Comprovante de Endereço" data-required="true">
+          <button onclick="handleSelectedFile(3, 'delete')" type="button" class="delete-btn" id="deleteFile3" title="Remover arquivo"><img src="assets/Trash.svg" alt=""></button>
+        </div>
+
+        <label for="">Contrato Social*</label>
+        <div class="upload-field">
+          <label for="fileUpload4" class="file-label">
+            <span class="file-icon"><img src="assets/Google Docs.svg" alt=""></span>
+            <span class="file-placeholder" id="fileName4">Selecione um documento...</span>
+          </label>
+          <input onchange="handleSelectedFile(4, 'add')" type="file" id="fileUpload4" name="Contrato Social" data-required="true">
+          <button onclick="handleSelectedFile(4, 'delete')" type="button" class="delete-btn" id="deleteFile4" title="Remover arquivo"><img src="assets/Trash.svg" alt=""></button>
+        </div>
+
+        <label for="">Comprovante de Dados Bancários*</label>
+        <div class="upload-field">
+          <label for="fileUpload5" class="file-label">
+            <span class="file-icon"><img src="assets/Google Docs.svg" alt=""></span>
+            <span class="file-placeholder" id="fileName5">Selecione um documento...</span>
+          </label>
+          <input onchange="handleSelectedFile(5, 'add')" type="file" id="fileUpload5" name="Comprovante de Dados Bancarios" data-required="true">
+          <button onclick="handleSelectedFile(5, 'delete')" type="button" class="delete-btn" id="deleteFile5" title="Remover arquivo"><img src="assets/Trash.svg" alt=""></button>
+        </div>
+        
+      </div>
+
+      </div>
+      
+
+      <div class="button-group">
+        <p class="legend">*Obrigatório</p>
+        <div class="buttons">
+          <button class="left" type="button" onclick="prevStep()">
+            <img src="assets/Right Arrow-1.svg" alt="">
+            <p>Voltar</p>
+          </button>
+          <button type="button" onclick="nextStep()">
+            <p>Próxima etapa</p>
+            <img src="assets/Right Arrow.svg" alt="">
+          </button>
+        </div>
+      </div>
+    
+    </div>
+
+
+    <!-- Passo 4 -->
+    <div class="form-step">
+      <div class="fields">
+        <div class="first-div">
+
+          <label for="">Já trabalhou com consignado?*</label>
+          <div class="checkbox">
+            <div class="item">
+              <input type="radio" id="radio1-yes" value="Sim" name="Experiencia com Consignado" data-required="true">
+              <label for="radio1-yes" class="check" onclick="toggleRequiredBanks(true)"><span></span></label>
+              <label>Sim</label>
+            </div>
+    
+            <div class="item">
+              <input type="radio" id="radio1-no" value="Nao" name="Experiencia com Consignado" data-required="true">
+              <label for="radio1-no" class="check" onclick="toggleRequiredBanks(false)"><span></span></label>
+              <label>Não</label>
+            </div>
+          </div>
+    
+          <label for="">Se sim, informe quais bancos*</label>
+          <select name="Bancos[]" id="bancos" multiple>
+            <option value="ABAMSP">ABAMSP</option>
+            <option value="ALFA SEGUROS">ALFA SEGUROS</option>
+            <option value="ALLIANZ SEGUROS">ALLIANZ SEGUROS</option>
+            <option value="ANCORA CONSORCIO">ANCORA CONSORCIO</option>
+            <option value="AZUL SEGUROS">AZUL SEGUROS</option>
+            <option value="BANCO CBSS (IBI)">BANCO CBSS (IBI)</option>
+            <option value="BANRISUL">BANRISUL</option>
+            <option value="BARI">BARI</option>
+            <option value="BB CONSORCIO">BB CONSORCIO</option>
+            <option value="BB MAIS">BB MAIS</option>
+            <option value="BMG">BMG</option>
+            <option value="BRADESCO FINANCIAMENTOS">BRADESCO FINANCIAMENTOS</option>
+            <option value="BRADESCO SEGUROS">BRADESCO SEGUROS</option>
+            <option value="BRB">BRB</option>
+            <option value="BV">BV</option>
+            <option value="C6 BANK">C6 BANK</option>
+            <option value="CANOPUS CONSORCIO">CANOPUS CONSORCIO</option>
+            <option value="CARSYSTEM">CARSYSTEM</option>
+            <option value="CCB">CCB</option>
+            <option value="CETELEM">CETELEM</option>
+            <option value="CHINA BANK">CHINA BANK</option>
+            <option value="CREDITAS">CREDITAS</option>
+            <option value="CREFAZ">CREFAZ</option>
+            <option value="CREFISA">CREFISA</option>
+            <option value="CRONOS">CRONOS</option>
+            <option value="DAYCOVAL">DAYCOVAL</option>
+            <option value="DAYCOVAL EXERCITO">DAYCOVAL EXERCITO</option>
+            <option value="DAYCOVAL GOV CE">DAYCOVAL GOV CE</option>
+            <option value="DAYCOVAL PJ">DAYCOVAL PJ</option>
+            <option value="DIGIO">DIGIO</option>
+            <option value="EMPRESTIMO SIM">EMPRESTIMO SIM</option>
+            <option value="ESTRELA GUIA">ESTRELA GUIA</option>
+            <option value="FACTA FINANCEIRA">FACTA FINANCEIRA</option>
+            <option value="FINANTO BANK">FINANTO BANK</option>
+            <option value="HDI SEGUROS">HDI SEGUROS</option>
+            <option value="IC DIGITAL">IC DIGITAL</option>
+            <option value="ICATU">ICATU</option>
+            <option value="ICRED">ICRED</option>
+            <option value="ITAU CONSIGNADO">ITAU CONSIGNADO</option>
+            <option value="ITAU CONSORCIO">ITAU CONSORCIO</option>
+            <option value="ITAU SEGUROS">ITAU SEGUROS</option>
+            <option value="ITURAN SEGUROS">ITURAN SEGUROS</option>
+            <option value="JB CRED">JB CRED</option>
+            <option value="LETTER CONSORCIO">LETTER CONSORCIO</option>
+            <option value="LIBERTY SEGUROS">LIBERTY SEGUROS</option>
+            <option value="LIUGONG CONSORCIO">LIUGONG CONSORCIO</option>
+            <option value="LOTUS+">LOTUS+</option>
+            <option value="MAPFRE SEGUROS">MAPFRE SEGUROS</option>
+            <option value="MASTER">MASTER</option>
+            <option value="MATRIX ENERGIA">MATRIX ENERGIA</option>
+            <option value="MERCANTIL">MERCANTIL</option>
+            <option value="MEU CASHCARD">MEU CASHCARD</option>
+            <option value="OLE CONSIGNADO">OLE CONSIGNADO</option>
+            <option value="PAN">PAN</option>
+            <option value="PAN - UNISERSIDADE">PAN - UNISERSIDADE</option>
+            <option value="PAN CONTA DIGITAL">PAN CONTA DIGITAL</option>
+            <option value="PHTECH">PHTECH</option>
+            <option value="PIX CARD">PIX CARD</option>
+            <option value="PORTO SEGURO">PORTO SEGURO</option>
+            <option value="PORTOCRED">PORTOCRED</option>
+            <option value="QUERO +">QUERO +</option>
+            <option value="RODOBENS">RODOBENS</option>
+            <option value="SABEMI">SABEMI</option>
+            <option value="SAFRA">SAFRA</option>
+            <option value="SAFRA VEICULOS">SAFRA VEICULOS</option>
+            <option value="SANTANDER">SANTANDER</option>
+            <option value="SIMPLIX">SIMPLIX</option>
+            <option value="SOMPO SEGUROS">SOMPO SEGUROS</option>
+            <option value="SUHAI SEGUROS">SUHAI SEGUROS</option>
+            <option value="TOKIO MARINE SEGUROS">TOKIO MARINE SEGUROS</option>
+            <option value="TOO SEGUROS">TOO SEGUROS</option>
+            <option value="TRADICAO CONSORCIO">TRADICAO CONSORCIO</option>
+            <option value="VIA CERTA">VIA CERTA</option>
+            <option value="ZILICRED">ZILICRED</option>
+            <option value="ZURICH SEGUROS">ZURICH SEGUROS</option>
+          </select>
+    
+          <label for="">Já trabalhou com promotora?*</label>
+          <div class="checkbox">
+            <div class="item">
+              <input type="radio" id="radio2-yes" value="Sim" name="Experiencia com Promotora" data-required="true">
+              <label for="radio2-yes" class="check" onclick="toggleRequiredPromoters(true)"><span></span></label>
+              <label>Sim</label>
+            </div>
+      
+            <div class="item">
+              <input type="radio" id="radio2-no" value="Nao" name="Experiencia com Promotora" data-required="true">
+              <label for="radio2-no" class="check" onclick="toggleRequiredPromoters(false)"><span></span></label>
+              <label>Não</label>
+            </div>
+          </div>
+    
+          <label for="">Se sim, informe quais promotoras*</label>
+          <input type="text" id="promotoras" name="Promotoras">
+    
+          <label for="">Quanto tempo trabalha no mercado de crédito?*</label>
+          <select name="Tempo de Mercado" id="" data-required="true">
+            <option value="" selected disabled></option>
+            <option value="Nao atua">Não atua</option>
+            <option value="Nao atua, mas possui experiencia">Não atua, mas possui experiência</option>
+            <option value="Menos de um ano">Menos de 1 ano</option>
+            <option value="De 1 a 5 anos">De 1 a 5 anos</option>
+            <option value="Mais de 5 anos">Mais de 5 anos</option>
+          </select>
+        </div>
+
+        <div class="second-div">
+          <label for="">Qual o principal produto que deseja trabalhar?*</label>
+          <select name="Produto que deseja trabalhar" id="" data-required="true">
+            <option value="" selected disabled></option>
+            <option value="CAPITAL DE GIRO">CAPITAL DE GIRO</option>
+            <option value="CARTÃO">CARTÃO</option>
+            <option value="CONSIGNADO PRIVADO">CONSIGNADO PRIVADO</option>
+            <option value="CONSORCIOS">CONSORCIOS</option>
+            <option value="CREDITO PESSOAL">CREDITO PESSOAL</option>
+            <option value="ENERGIA SOLAR">ENERGIA SOLAR</option>
+            <option value="ESTADO">ESTADO</option>
+            <option value="FEDERAL CIVIL">FEDERAL CIVIL</option>
+            <option value="FGTS">FGTS</option>
+            <option value="FORÇAS ARMADAS">FORÇAS ARMADAS</option>
+            <option value="FUNDAÇÃO">FUNDAÇÃO</option>
+            <option value="IMOBILIARIO">IMOBILIARIO</option>
+            <option value="INSS">INSS</option>
+            <option value="INSTITUTO">INSTITUTO</option>
+            <option value="IPMV">IPMV</option>
+            <option value="MAQUINA DE CARTAO">MAQUINA DE CARTAO</option>
+            <option value="PREFEITURAS">PREFEITURAS</option>
+            <option value="PRIVADO">PRIVADO</option>
+            <option value="PRODUTOS BANCARIOS">PRODUTOS BANCARIOS</option>
+            <option value="SEGUROS">SEGUROS</option>
+            <option value="TRIBUNAL">TRIBUNAL</option>
+            <option value="VEICULO">VEICULO</option>
+          </select>
+
+          <label for="">Qual seu principal formato de trabalho?*</label>
+          <select name="Formato de Trabalho" id="" data-required="true">
+            <option value="" selected disabled></option>
+            <option value="Home Office">Home Office</option>
+            <option value="Call Center">Call Center</option>
+            <option value="Loja Balcão">Loja Balcão</option>
+          </select>
+
+          <label for="">Como nos conheceu?*</label>
+          <select name="Como nos Conheceu" id="" data-required="true">
+            <option value="" selected disabled></option>
+            <option value="Outros">Outros</option>
+            <option value="Midia">Mídia</option>
+            <option value="Indicacao">Indicação</option>
+          </select>
+
+          <label for="">Se foi indicado, informe o nome de quem indicou</label>
+          <input type="text" name="Mome de quem indicou">
+        </div>
+      </div>
+
+      <div class="terms">
+        <input id="terms" type="checkbox" name="Aceitar Termos" data-required="true">
+        <label for="terms"><img src="assets/Done.svg" alt=""></label>
+        <p>Ao preencher e enviar este formulário, você autoriza que a Empreste Já trate meus dados para envio de comunicações sobre produtos e serviços e também estou de acordo com os <a href="https://empresteja.com.br/termos-de-servico/">termos de serviço</a> e <a href="https://empresteja.com.br/politica-de-privacidade/">política de privacidade.</a></p>
+      </div>
+
+      <div class="button-group">
+        <p class="legend">*Obrigatório</p>
+        <div class="buttons">
+          <button class="left" type="button" onclick="prevStep()">
+            <img src="assets/Right Arrow-1.svg" alt="">
+            <p>Voltar</p>
+          </button>
+          <button type="submit" onclick="nextStep()">
+            <p>Enviar Formulário</p>
+            <img src="assets/Right Arrow.svg" alt="">
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </form>
+  
+
+
+
+</body>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+<script>
+  const multipleSelect = new Choices('#bancos', {
+    removeItemButton: true,  // Habilita o botão de remover
+    placeholderValue: 'Selecionar bancos  ',
+    searchPlaceholderValue: 'Buscar...',
+    shouldSort: false
+  });
+</script>
+
+</html>
