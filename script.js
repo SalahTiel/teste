@@ -1,6 +1,5 @@
 const steps = document.querySelectorAll(".form-step");
 const progressBar = document.querySelectorAll(".step")
-const progress = document.getElementById("progress");
 let currentStep = 0;
 
 function showStep(index) {
@@ -8,7 +7,7 @@ function showStep(index) {
     step.classList.toggle("active", i === index);
   });
   progressBar.forEach((step, i) =>{
-    step.classList.toggle("active", i ===index)
+    step.classList.toggle("active", i === index)
   })
   updateProgress();
 }
@@ -25,11 +24,6 @@ function prevStep() {
     currentStep--;
     showStep(currentStep);
   }
-}
-
-function updateProgress() {
-  const percent = (currentStep / (steps.length - 1)) * 100;
-  progress.style.width = percent + "%";
 }
 
 //Formata os campos inseridos
